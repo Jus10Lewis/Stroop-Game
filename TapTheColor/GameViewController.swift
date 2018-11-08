@@ -16,12 +16,12 @@ class GameViewController: UIViewController {
     
     //MARK: - Instance Variables
     ///The possible color choices
-    let colors = [#colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1), #colorLiteral(red: 0, green: 0.9768045545, blue: 0, alpha: 1), #colorLiteral(red: 0.01680417731, green: 0.1983509958, blue: 1, alpha: 1), #colorLiteral(red: 0.9994240403, green: 0.9855536819, blue: 0, alpha: 1)]
+    private let colors = [#colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1), #colorLiteral(red: 0, green: 0.9768045545, blue: 0, alpha: 1), #colorLiteral(red: 0.01680417731, green: 0.1983509958, blue: 1, alpha: 1), #colorLiteral(red: 0.9994240403, green: 0.9855536819, blue: 0, alpha: 1)]
 
     ///The game model object
-    let game = StroopGame()
+    private let game = StroopGame()
 
-    var gameTimer: Timer?
+    private var gameTimer: Timer?
 
     //MARK: - Override Functions
     override func viewDidLoad() {
@@ -48,7 +48,7 @@ class GameViewController: UIViewController {
 
     //MARK: - My Functions
     ///Called whenever one of the colors are chosen. Will clean up soon
-    func colorButtonPressed(choice: Int) {
+    private func colorButtonPressed(choice: Int) {
         
         game.playGame(playerChoice: choice)
         if game.clockShouldBeRunning && !game.clockIsRunning {
@@ -59,12 +59,11 @@ class GameViewController: UIViewController {
             endGame()
         }
         
-        colorLabel.insertSubview(timeScoreLabel, at: 5)
     }
     
     //TODO: Move to StroopGame model, and use a delegate method to set label text
     ///startTheClock will be moved to model soon
-    func startTheClock () {
+    private func startTheClock () {
         game.setClockIsRunning()
         gameTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { (timer) in
             self.game.tickTheGameClock()
@@ -78,7 +77,7 @@ class GameViewController: UIViewController {
         }
     }
     
-    func endGame() {
+    private func endGame() {
         gameTimer?.invalidate()
         performSegue(withIdentifier: "GoToGameOver", sender: nil)
         game.resetGame()
@@ -87,7 +86,7 @@ class GameViewController: UIViewController {
         colorLabel.textColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
     }
     
-    func updateLabels () {
+    private func updateLabels () {
         colorLabel.text = game.wordToDisplay
         colorLabel.textColor = colors[game.correctAnswer]
     }

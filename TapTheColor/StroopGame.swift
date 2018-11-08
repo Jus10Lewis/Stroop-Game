@@ -14,6 +14,7 @@ class StroopGame {
     var clockIsRunning = false
     var achievedNewHighScore = false
     
+    var GitTemp = 0
     var highScore = 0
     var score = 0
     let maxGameTime = 6
@@ -22,7 +23,7 @@ class StroopGame {
     var correctAnswer = 0
     
     var wordToDisplay = "START"
-    var words = ["RED","BLUE","GREEN","YELLOW"]
+    private var words = ["RED","BLUE","GREEN","YELLOW"]
 
     ///These two vars are hacky to avoid using delegation
     var clockShouldBeRunning = false
@@ -51,13 +52,13 @@ class StroopGame {
     }
 
     ///Picks a random word from the words array
-    func rollRandomWord () {
+    private func rollRandomWord () {
         let wordNum = Int.random(in: 0...3)
         wordToDisplay = words[wordNum]
     }
     
     ///correctAnswer is a random integer representing one of the 4 color options
-    func rollRandomAnswer() {
+    private func rollRandomAnswer() {
         correctAnswer = Int.random(in: 0...3)
     }
     
@@ -76,7 +77,7 @@ class StroopGame {
         }
     }
     
-    func setNewHighScore() {
+    private func setNewHighScore() {
         if score > highScore {
             highScore = score
             achievedNewHighScore = true
@@ -87,7 +88,7 @@ class StroopGame {
 
     //endGame called when timeRemaining <= 0
     //            or when player answer is wrong
-    func endGame() {
+    private func endGame() {
         gameIsOver = true
         setNewHighScore()
         clockIsRunning = false

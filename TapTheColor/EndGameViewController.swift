@@ -21,10 +21,10 @@ class EndGameViewController: UIViewController {
     var isNewHighScore = false
     
     ///Timer used to blink a label
-    var blinkTimer: Timer?
+    private var blinkTimer: Timer?
     ///colors used to blink a label
-    let blinkColors = [#colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1), #colorLiteral(red: 0, green: 0.9768045545, blue: 0, alpha: 1), #colorLiteral(red: 0.01680417731, green: 0.1983509958, blue: 1, alpha: 1), #colorLiteral(red: 0.9994240403, green: 0.9855536819, blue: 0, alpha: 1)]
-    
+    private let blinkColors = [#colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1), #colorLiteral(red: 0, green: 0.9768045545, blue: 0, alpha: 1), #colorLiteral(red: 0.01680417731, green: 0.1983509958, blue: 1, alpha: 1), #colorLiteral(red: 0.9994240403, green: 0.9855536819, blue: 0, alpha: 1)]
+
     //MARK: - Override Functions
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +44,7 @@ class EndGameViewController: UIViewController {
     }
     
     //MARK: - My Functions
-    func blinkTheNewHighLabel() {
+    private func blinkTheNewHighLabel() {
         var colorCounter = 0
         blinkTimer = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: true) { (timer) in
             colorCounter += 1
