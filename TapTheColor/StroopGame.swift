@@ -23,7 +23,7 @@ class StroopGame {
     var correctAnswer = 0
     
     var wordToDisplay = "START"
-    private var words = ["RED","BLUE","GREEN","YELLOW"]
+    private var words = ["RED","GREEN","BLUE","YELLOW"]
 
     ///These two vars are hacky to avoid using delegation
     var clockShouldBeRunning = false

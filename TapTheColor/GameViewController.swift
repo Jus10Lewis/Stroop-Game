@@ -32,25 +32,9 @@ class GameViewController: UIViewController {
 
     //MARK: - IBActions
     //Picking Buttons
-    @IBAction func chooseRed(_ sender: Any) {
-        colorButtonPressed(choice: 0)
-    }
-    @IBAction func chooseBlue(_ sender: Any) {
-        colorButtonPressed(choice: 1)
-    }
-    @IBAction func chooseGreen(_ sender: Any) {
-        colorButtonPressed(choice: 2)
-    }
-    @IBAction func chooseYellow(_ sender: Any) {
-        colorButtonPressed(choice: 3)
-    }
     
-
-    //MARK: - My Functions
-    ///Called whenever one of the colors are chosen. Will clean up soon
-    private func colorButtonPressed(choice: Int) {
-        
-        game.playGame(playerChoice: choice)
+    @IBAction func userTappedAColorButton(_ sender: UIButton) {
+        game.playGame(playerChoice: sender.tag)
         if game.clockShouldBeRunning && !game.clockIsRunning {
             startTheClock() //Will be moved to StroopGame model
         }
@@ -58,8 +42,9 @@ class GameViewController: UIViewController {
         if game.gameIsOver {
             endGame()
         }
-        
     }
+
+    //MARK: - My Functions
     
     //TODO: Move to StroopGame model, and use a delegate method to set label text
     ///startTheClock will be moved to model soon
