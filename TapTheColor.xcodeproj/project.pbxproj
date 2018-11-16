@@ -9,23 +9,23 @@
 /* Begin PBXBuildFile section */
 		23025D612187F286006538DD /* StroopGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23025D602187F286006538DD /* StroopGame.swift */; };
 		23B1A697216D06F000343809 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B1A696216D06F000343809 /* AppDelegate.swift */; };
-		23B1A699216D06F000343809 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B1A698216D06F000343809 /* GameViewController.swift */; };
+		23B1A699216D06F000343809 /* PlayGameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B1A698216D06F000343809 /* PlayGameVC.swift */; };
 		23B1A69C216D06F000343809 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23B1A69A216D06F000343809 /* Main.storyboard */; };
 		23B1A69E216D06F100343809 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23B1A69D216D06F100343809 /* Assets.xcassets */; };
 		23B1A6A1216D06F100343809 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23B1A69F216D06F100343809 /* LaunchScreen.storyboard */; };
-		23F553062183A5D200B5FE88 /* EndGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F553052183A5D200B5FE88 /* EndGameViewController.swift */; };
+		23F553062183A5D200B5FE88 /* GameOverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F553052183A5D200B5FE88 /* GameOverVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		23025D602187F286006538DD /* StroopGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StroopGame.swift; sourceTree = "<group>"; };
 		23B1A693216D06F000343809 /* TapTheColor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TapTheColor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23B1A696216D06F000343809 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		23B1A698216D06F000343809 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		23B1A698216D06F000343809 /* PlayGameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayGameVC.swift; sourceTree = "<group>"; };
 		23B1A69B216D06F000343809 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		23B1A69D216D06F100343809 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		23B1A6A0216D06F100343809 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		23B1A6A2216D06F100343809 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		23F553052183A5D200B5FE88 /* EndGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndGameViewController.swift; sourceTree = "<group>"; };
+		23F553052183A5D200B5FE88 /* GameOverVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +39,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		23A75D9D2195D5BC00A7F2B9 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				23B1A698216D06F000343809 /* PlayGameVC.swift */,
+				23F553052183A5D200B5FE88 /* GameOverVC.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		23A75D9E2195D5CA00A7F2B9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				23025D602187F286006538DD /* StroopGame.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		23A75D9F2195D5D400A7F2B9 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				23B1A696216D06F000343809 /* AppDelegate.swift */,
+				23B1A69F216D06F100343809 /* LaunchScreen.storyboard */,
+				23B1A69D216D06F100343809 /* Assets.xcassets */,
+				23B1A6A2216D06F100343809 /* Info.plist */,
+			);
+			name = SupportingFiles;
+			sourceTree = "<group>";
+		};
 		23B1A68A216D06F000343809 = {
 			isa = PBXGroup;
 			children = (
@@ -58,14 +86,10 @@
 		23B1A695216D06F000343809 /* TapTheColor */ = {
 			isa = PBXGroup;
 			children = (
-				23B1A698216D06F000343809 /* GameViewController.swift */,
-				23025D602187F286006538DD /* StroopGame.swift */,
-				23F553052183A5D200B5FE88 /* EndGameViewController.swift */,
 				23B1A69A216D06F000343809 /* Main.storyboard */,
-				23B1A69F216D06F100343809 /* LaunchScreen.storyboard */,
-				23B1A696216D06F000343809 /* AppDelegate.swift */,
-				23B1A69D216D06F100343809 /* Assets.xcassets */,
-				23B1A6A2216D06F100343809 /* Info.plist */,
+				23A75D9E2195D5CA00A7F2B9 /* Models */,
+				23A75D9D2195D5BC00A7F2B9 /* Controllers */,
+				23A75D9F2195D5D400A7F2B9 /* SupportingFiles */,
 			);
 			path = TapTheColor;
 			sourceTree = "<group>";
@@ -141,9 +165,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				23B1A699216D06F000343809 /* GameViewController.swift in Sources */,
+				23B1A699216D06F000343809 /* PlayGameVC.swift in Sources */,
 				23B1A697216D06F000343809 /* AppDelegate.swift in Sources */,
-				23F553062183A5D200B5FE88 /* EndGameViewController.swift in Sources */,
+				23F553062183A5D200B5FE88 /* GameOverVC.swift in Sources */,
 				23025D612187F286006538DD /* StroopGame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

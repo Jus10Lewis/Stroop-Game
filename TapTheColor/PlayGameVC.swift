@@ -1,5 +1,5 @@
 //
-//  GameViewController.swift
+//  GameVC.swift
 //  TapTheColor
 //
 //  Created by Justin Lewis on 10/9/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GameViewController: UIViewController {
+class PlayGameVC: UIViewController {
 
     //MARK: - IBOutlets
     @IBOutlet weak var colorLabel: UILabel!
@@ -23,9 +23,14 @@ class GameViewController: UIViewController {
 
     private var gameTimer: Timer?
 
-    //MARK: - Override Functions
+    //MARK: - Overrides
+//    override var preferredStatusBarStyle: UIStatusBarStyle {
+//        return .lightContent
+//    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        game.highScore = UserDefaults.standard.integer(forKey: "highScore")
         game.timeRemaining = game.maxGameTime
         timeScoreLabel.text = "Time: \(game.timeRemaining)"
     }
@@ -77,7 +82,7 @@ class GameViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let vc = segue.destination as? EndGameViewController {
+        if let vc = segue.destination as? GameOverVC {
             vc.score = game.score
             vc.highScore = game.highScore
             vc.isNewHighScore = game.achievedNewHighScore
