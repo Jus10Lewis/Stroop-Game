@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PlayGameVC: UIViewController {
+class PlayGameVC: UIViewController, gameDelegate {
 
     //MARK: - IBOutlets
     @IBOutlet weak var colorLabel: UILabel!
@@ -21,8 +21,6 @@ class PlayGameVC: UIViewController {
     ///The game model object
     private let game = StroopGame()
 
-    private var gameTimer: Timer?
-
     //MARK: - Overrides
 //    override var preferredStatusBarStyle: UIStatusBarStyle {
 //        return .lightContent
@@ -30,6 +28,7 @@ class PlayGameVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        game.myDelegate = self
         game.highScore = UserDefaults.standard.integer(forKey: "highScore")
         game.timeRemaining = game.maxGameTime
         timeScoreLabel.text = "Time: \(game.timeRemaining)"
@@ -40,42 +39,13 @@ class PlayGameVC: UIViewController {
     
     @IBAction func userTappedAColorButton(_ sender: UIButton) {
         game.playGame(playerChoice: sender.tag)
-        if game.clockShouldBeRunning && !game.clockIsRunning {
-            startTheClock() //Will be moved to StroopGame model
-        }
+
         updateLabels()
-        if game.gameIsOver {
-            endGame()
-        }
+
     }
 
     //MARK: - My Functions
-    
-    //TODO: Move to StroopGame model, and use a delegate method to set label text
-    ///startTheClock will be moved to model soon
-    private func startTheClock () {
-        game.setClockIsRunning()
-        gameTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { (timer) in
-            self.game.tickTheGameClock()
-            
-            //This needs to stay in VC, and be called from model using delegation
-            self.timeScoreLabel.text = "Time: \(self.game.timeRemaining)"
-            
-            if self.game.timeRemaining <= 0 {
-                self.endGame()
-            }
-        }
-    }
-    
-    private func endGame() {
-        gameTimer?.invalidate()
-        performSegue(withIdentifier: "GoToGameOver", sender: nil)
-        game.resetGame()
-        timeScoreLabel.text = "Time: \(game.timeRemaining)"
-        colorLabel.text = "START"
-        colorLabel.textColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
-    }
-    
+
     private func updateLabels () {
         colorLabel.text = game.wordToDisplay
         colorLabel.textColor = colors[game.correctAnswer]
@@ -87,6 +57,18 @@ class PlayGameVC: UIViewController {
             vc.highScore = game.highScore
             vc.isNewHighScore = game.achievedNewHighScore
         }
+    }
+    
+    //MARK: - Delegate Methods
+    func updateTimerDisplay (with timeRemaining: Int) {
+        self.timeScoreLabel.text = "Time: \(timeRemaining)"
+    }
+    
+    func endGame() {
+        performSegue(withIdentifier: "GoToGameOver", sender: nil)
+        timeScoreLabel.text = "Time: \(game.timeRemaining)"
+        colorLabel.text = "START"
+        colorLabel.textColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
     }
 }
 

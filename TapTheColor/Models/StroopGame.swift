@@ -8,9 +8,14 @@
 
 import Foundation
 
+protocol gameDelegate {
+    func updateTimerDisplay (with timeRemaining: Int)
+    func endGame()
+}
 
 class StroopGame {
     
+    var myDelegate: gameDelegate?
     var clockIsRunning = false
     var achievedNewHighScore = false
     var highScore = 0
@@ -21,13 +26,11 @@ class StroopGame {
     var correctAnswer = 0
     var previousAnswer = 0
     
+    private var gameTimer: Timer?
+
     var wordToDisplay = "START"
     var previousWord = "START"
     private var words = ["RED","GREEN","BLUE","YELLOW"]
-
-    ///These two vars are hacky to avoid using delegation
-    var clockShouldBeRunning = false
-    var gameIsOver = false
 
     //MARK: - Methods
 
@@ -41,7 +44,7 @@ class StroopGame {
             rollRandomAnswer()
             rollRandomWord()
         } else if !clockIsRunning && choiceIsCorrect { //Start the game
-            clockShouldBeRunning = true
+            startTheClock()
             rollRandomAnswer()
             rollRandomWord()
             
@@ -51,6 +54,21 @@ class StroopGame {
         //Then do nothing
     }
 
+
+    private func startTheClock () {
+        clockIsRunning = true
+        gameTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { (timer) in
+
+            self.timeRemaining -= 1
+            self.myDelegate?.updateTimerDisplay(with: self.timeRemaining)
+            if self.timeRemaining <= 0 {
+                self.endGame()
+            }
+
+        }
+    }
+    
+    
     ///correctAnswer is a random integer representing one of the 4 color options
     private func rollRandomAnswer() {
         previousAnswer = correctAnswer
@@ -71,21 +89,6 @@ class StroopGame {
         }
     }
     
-    //The VC needs to set this flag when it starts the game clock
-    ///setClockIsRunning will be removed after timer moves to model
-    //TODO: Move the Timer to the Game model after teaching delegation
-    func setClockIsRunning () {
-        clockIsRunning = true
-    }
-    
-    ///tickTheGameClock will be removed after timer moves to model
-    func tickTheGameClock() {
-        timeRemaining -= 1
-        if timeRemaining <= 0 {
-            endGame()
-        }
-    }
-    
     private func setNewHighScore() {
         if score > highScore {
             highScore = score
@@ -99,18 +102,16 @@ class StroopGame {
     //endGame called when timeRemaining <= 0
     //            or when player answer is wrong
     private func endGame() {
-        gameIsOver = true
         setNewHighScore()
+        myDelegate?.endGame()
+        
+        //reset the game
         clockIsRunning = false
-        clockShouldBeRunning = false
-    }
-    
-    //Called when VC segues
-    func resetGame() {
-        gameIsOver = false
+        gameTimer?.invalidate()
         score = 0
         correctAnswer = 0
         wordToDisplay = "START"
         timeRemaining = maxGameTime
+        myDelegate?.updateTimerDisplay(with: timeRemaining)
     }
 }

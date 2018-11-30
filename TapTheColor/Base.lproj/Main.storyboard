@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Dpz-NR-74S">
-    <device id="ipad12_9" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -14,28 +14,28 @@
             <objects>
                 <viewController id="Dpz-NR-74S" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kRj-8f-pJg">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="eRJ-3F-iDp">
-                                <rect key="frame" x="30" y="30" width="964" height="1326"/>
+                                <rect key="frame" x="26" y="54" width="323" height="714"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="0hZ-RP-CNd">
-                                        <rect key="frame" x="7.5" y="0.0" width="949.5" height="296"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="0hZ-RP-CNd">
+                                        <rect key="frame" x="1" y="0.0" width="321.33333333333331" height="272.33333333333331"/>
                                         <string key="text">Game Instructions:
 You will be shown words, one at a time, printed in different colors. Ignore what the word says, and tap the button that correspond to the font color that the word is shown in. For example, if the word “RED” is shown in a blue font, tap the blue button.</string>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Tap the COLOR, not the word." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="fqJ-LK-nk0">
-                                        <rect key="frame" x="343.5" y="316" width="277" height="26"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" ambiguous="YES" text="Tap the COLOR, not the word." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="fqJ-LK-nk0">
+                                        <rect key="frame" x="23" y="292.33333333333331" width="277" height="26"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LRx-GN-qtI">
-                                        <rect key="frame" x="0.0" y="362" width="964" height="964"/>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LRx-GN-qtI">
+                                        <rect key="frame" x="0.0" y="338.33333333333331" width="323" height="322.99999999999994"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="LRx-GN-qtI" secondAttribute="height" multiplier="1:1" id="GQz-mH-DCQ"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="pzs-ZE-z8o"/>
@@ -46,6 +46,12 @@ You will be shown words, one at a time, printed in different colors. Ignore what
                                             <segue destination="BYZ-38-t0r" kind="presentation" id="RrM-Ro-kV9"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="HELLO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ab7-pT-Dlz">
+                                        <rect key="frame" x="123.33333333333334" y="681.33333333333337" width="76.333333333333343" height="32.666666666666629"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="25"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -69,32 +75,32 @@ You will be shown words, one at a time, printed in different colors. Ignore what
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="PlayGameVC" customModule="TapTheColor" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="q55-0c-mZW" userLabel="Parent Stack">
-                                <rect key="frame" x="20" y="40" width="984" height="1306"/>
+                                <rect key="frame" x="20" y="64" width="335" height="694"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Tap the COLOR, not the word." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="eGA-m7-3pL">
-                                        <rect key="frame" x="146" y="0.0" width="692" height="65"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="65"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="50"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="START" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eSg-ei-UQ7">
-                                        <rect key="frame" x="419" y="75" width="146.5" height="60"/>
+                                        <rect key="frame" x="94.333333333333329" y="75" width="146.33333333333337" height="60"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                         <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="85m-He-cxO" userLabel="Button Stack">
-                                        <rect key="frame" x="0.0" y="145" width="984" height="982"/>
+                                        <rect key="frame" x="0.0" y="145" width="335" height="333"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="BeS-Qz-Iw8" userLabel="Row1 Button Stack">
-                                                <rect key="frame" x="0.0" y="0.0" width="984" height="484.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="335" height="160"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O1j-gu-7Bp">
-                                                        <rect key="frame" x="0.0" y="0.0" width="484.5" height="484.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
                                                         <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="O1j-gu-7Bp" secondAttribute="height" multiplier="1:1" id="zyd-Dh-Vtk"/>
@@ -104,7 +110,7 @@ You will be shown words, one at a time, printed in different colors. Ignore what
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yoc-D1-hHN">
-                                                        <rect key="frame" x="499.5" y="0.0" width="484.5" height="484.5"/>
+                                                        <rect key="frame" x="175" y="0.0" width="160" height="160"/>
                                                         <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="Yoc-D1-hHN" secondAttribute="height" multiplier="1:1" id="LBt-qR-8FM"/>
@@ -116,10 +122,10 @@ You will be shown words, one at a time, printed in different colors. Ignore what
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="cm5-X2-kQG" userLabel="Row2 Button Stack">
-                                                <rect key="frame" x="0.0" y="497.5" width="984" height="484.5"/>
+                                                <rect key="frame" x="0.0" y="173" width="335" height="160"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qoG-Xs-zqi">
-                                                        <rect key="frame" x="0.0" y="0.0" width="484.5" height="484.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
                                                         <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="qoG-Xs-zqi" secondAttribute="height" multiplier="1:1" id="Ody-w1-73m"/>
@@ -129,7 +135,7 @@ You will be shown words, one at a time, printed in different colors. Ignore what
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l2p-RD-gaZ">
-                                                        <rect key="frame" x="499.5" y="0.0" width="484.5" height="484.5"/>
+                                                        <rect key="frame" x="175" y="0.0" width="160" height="160"/>
                                                         <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="l2p-RD-gaZ" secondAttribute="height" multiplier="1:1" id="9dk-GO-3vh"/>
@@ -143,7 +149,7 @@ You will be shown words, one at a time, printed in different colors. Ignore what
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time: 30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pcL-1w-A2H">
-                                        <rect key="frame" x="397.5" y="1137" width="189.5" height="169"/>
+                                        <rect key="frame" x="72.666666666666671" y="488" width="189.66666666666663" height="206"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -175,23 +181,23 @@ You will be shown words, one at a time, printed in different colors. Ignore what
             <objects>
                 <viewController id="ZVG-z8-3L1" customClass="GameOverVC" customModule="TapTheColor" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="q2R-oh-pLC">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="51" translatesAutoresizingMaskIntoConstraints="NO" id="cPp-Kp-RHP">
-                                <rect key="frame" x="20" y="50" width="984" height="1306"/>
+                                <rect key="frame" x="20" y="74" width="335" height="694"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="u0f-Fb-BBP">
-                                        <rect key="frame" x="263" y="0.0" width="458.5" height="178"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="177.33333333333334"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="XTQ-iO-Wij">
-                                                <rect key="frame" x="69.5" y="0.0" width="319" height="84"/>
+                                                <rect key="frame" x="8.3333333333333428" y="0.0" width="318.66666666666663" height="83.666666666666671"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="70"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HighScore: 100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="Tsr-BI-TWZ">
-                                                <rect key="frame" x="0.0" y="94" width="458.5" height="84"/>
+                                                <rect key="frame" x="0.0" y="93.666666666666657" width="335" height="83.666666666666657"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="70"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -202,7 +208,7 @@ You will be shown words, one at a time, printed in different colors. Ignore what
                                         </constraints>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="z1p-d5-OLH">
-                                        <rect key="frame" x="147.5" y="229" width="689" height="191"/>
+                                        <rect key="frame" x="15.333333333333343" y="228.33333333333331" width="304.33333333333326" height="191"/>
                                         <string key="text">NEW HIGH SCORE!!
 🎈🎈🎈</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="80"/>
@@ -210,7 +216,7 @@ You will be shown words, one at a time, printed in different colors. Ignore what
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ifD-Ai-lgb">
-                                        <rect key="frame" x="126.5" y="471" width="731" height="835"/>
+                                        <rect key="frame" x="29.666666666666657" y="470.33333333333343" width="276" height="223.66666666666669"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="56"/>
                                         <state key="normal" title="Play Again?"/>
                                         <variation key="widthClass=regular">
