@@ -30,10 +30,13 @@ class StroopGame {
 
     var wordToDisplay = "START"
     var previousWord = "START"
-    private var words = ["RED","GREEN","BLUE","YELLOW"]
+    private var words: [String]
 
     //MARK: - Methods
-
+    init(words: [String]) {
+        self.words = words
+    }
+    
     ///Play the game logic
     func playGame(playerChoice: Int) {
         //Compares the Integers of correctanswer and playerChoice
@@ -41,14 +44,16 @@ class StroopGame {
         
         if clockIsRunning && choiceIsCorrect { //Playing game & CORRECT choice
             score += 1
+            playSound("bip")
             rollRandomAnswer()
             rollRandomWord()
         } else if !clockIsRunning && choiceIsCorrect { //Start the game
+            playSound("clack")
             startTheClock()
             rollRandomAnswer()
             rollRandomWord()
-            
         } else if clockIsRunning && !choiceIsCorrect {  //Playing game & WRONG choice
+            playSound("error")
             endGame()
         } // ELSE game hasn't started yet & player clicked wrong button
         //Then do nothing
@@ -62,6 +67,7 @@ class StroopGame {
             self.timeRemaining -= 1
             self.myDelegate?.updateTimerDisplay(with: self.timeRemaining)
             if self.timeRemaining <= 0 {
+                playSound("correct")
                 self.endGame()
             }
 
@@ -73,7 +79,7 @@ class StroopGame {
     private func rollRandomAnswer() {
         previousAnswer = correctAnswer
         while previousAnswer == correctAnswer {
-            correctAnswer = Int.random(in: 0...3)
+            correctAnswer = Int.random(in: 0...(words.count-1))
         }
     }
     
@@ -83,7 +89,7 @@ class StroopGame {
         while previousWord == wordToDisplay {
             var wordNum = correctAnswer
             while wordNum == correctAnswer {
-                wordNum = Int.random(in: 0...3)
+                wordNum = Int.random(in: 0...(words.count-1))
             }
             wordToDisplay = words[wordNum]
         }
