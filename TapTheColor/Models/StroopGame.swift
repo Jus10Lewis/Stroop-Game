@@ -18,9 +18,8 @@ class StroopGame {
     var myDelegate: gameDelegate?
     var clockIsRunning = false
     var achievedNewHighScore = false
-    var highScore = 0
     var score = 0
-    let maxGameTime = 6
+    var maxGameTime = 6
     var timeRemaining = 0
     ///The correct choice is an Int from 0 to 3
     var correctAnswer = 0
@@ -35,6 +34,11 @@ class StroopGame {
     //MARK: - Methods
     init(words: [String]) {
         self.words = words
+    }
+
+    init(words: [String], maxGameTime: Int) {
+        self.words = words
+        self.maxGameTime = maxGameTime
     }
     
     ///Play the game logic
@@ -96,6 +100,7 @@ class StroopGame {
     }
     
     private func setNewHighScore() {
+        var highScore = UserDefaults.standard.integer(forKey: "highScore")
         if score > highScore {
             highScore = score
             achievedNewHighScore = true
@@ -107,17 +112,20 @@ class StroopGame {
 
     //endGame called when timeRemaining <= 0
     //            or when player answer is wrong
-    private func endGame() {
+    func endGame() {
         setNewHighScore()
         myDelegate?.endGame()
         
         //reset the game
         clockIsRunning = false
-        gameTimer?.invalidate()
+        stopTheClock()
         score = 0
         correctAnswer = 0
         wordToDisplay = "START"
         timeRemaining = maxGameTime
         myDelegate?.updateTimerDisplay(with: timeRemaining)
+    }
+    func stopTheClock () {
+        gameTimer?.invalidate()
     }
 }

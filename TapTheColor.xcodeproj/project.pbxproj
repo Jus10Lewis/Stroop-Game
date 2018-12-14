@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		23025D612187F286006538DD /* StroopGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23025D602187F286006538DD /* StroopGame.swift */; };
+		2306502221B9C4F9007B2022 /* LabelWithAdaptiveTextHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2306502121B9C4F9007B2022 /* LabelWithAdaptiveTextHeight.swift */; };
 		236BD01821B6D10600708AE8 /* PlaySoundFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236BD01721B6D10600708AE8 /* PlaySoundFunction.swift */; };
 		236BD01A21B6D1A800708AE8 /* bip.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 236BD01921B6D1A800708AE8 /* bip.mp3 */; };
 		236BD01C21B6D42900708AE8 /* error.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 236BD01B21B6D42900708AE8 /* error.mp3 */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		23025D602187F286006538DD /* StroopGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StroopGame.swift; sourceTree = "<group>"; };
+		2306502121B9C4F9007B2022 /* LabelWithAdaptiveTextHeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelWithAdaptiveTextHeight.swift; sourceTree = "<group>"; };
 		236BD01721B6D10600708AE8 /* PlaySoundFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaySoundFunction.swift; sourceTree = "<group>"; };
 		236BD01921B6D1A800708AE8 /* bip.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bip.mp3; sourceTree = "<group>"; };
 		236BD01B21B6D42900708AE8 /* error.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = error.mp3; sourceTree = "<group>"; };
@@ -53,6 +55,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2306502021B9C45F007B2022 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2306502121B9C4F9007B2022 /* LabelWithAdaptiveTextHeight.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		23A75D9D2195D5BC00A7F2B9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +119,7 @@
 			children = (
 				23B1A69A216D06F000343809 /* Main.storyboard */,
 				23A75D9E2195D5CA00A7F2B9 /* Models */,
+				2306502021B9C45F007B2022 /* View */,
 				23A75D9D2195D5BC00A7F2B9 /* Controllers */,
 				23A75D9F2195D5D400A7F2B9 /* SupportingFiles */,
 			);
@@ -197,6 +208,7 @@
 				23F553062183A5D200B5FE88 /* GameOverVC.swift in Sources */,
 				23025D612187F286006538DD /* StroopGame.swift in Sources */,
 				236BD02421B6FC5E00708AE8 /* MenuVC.swift in Sources */,
+				2306502221B9C4F9007B2022 /* LabelWithAdaptiveTextHeight.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,8 +355,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4BFK884J52;
+				DEVELOPMENT_TEAM = VFW9Q2UN8P;
 				INFOPLIST_FILE = TapTheColor/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -361,8 +374,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4BFK884J52;
+				DEVELOPMENT_TEAM = VFW9Q2UN8P;
 				INFOPLIST_FILE = TapTheColor/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
